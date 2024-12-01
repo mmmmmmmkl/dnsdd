@@ -2,87 +2,87 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的博客</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-            min-height: 100vh;
+            background-color: #f4f4f4;
         }
-
         header {
             background-color: #333;
             color: #fff;
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 10px 0;
+            text-align: center;
         }
-
+        header h1 {
+            margin: 0;
+        }
         .search-container {
-            position: relative;
+            margin: 20px auto;
+            text-align: center;
         }
-
-        .search-container input {
-            padding: 0.5rem;
-            font-size: 1rem;
-            border: none;
+        .search-container input[type="text"] {
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            border: 1px solid #ccc;
             border-radius: 4px;
         }
-
         .search-container button {
-            padding: 0.5rem 1rem;
-            font-size: 1rem;
+            padding: 10px 20px;
             border: none;
-            border-radius: 4px;
-            background-color: #007BFF;
+            background-color: #333;
             color: #fff;
+            border-radius: 4px;
             cursor: pointer;
-            position: absolute;
-            right: 0;
-            top: 0;
-            height: 100%;
         }
-
         .search-container button:hover {
-            background-color: #0056b3;
+            background-color: #444;
         }
-
         main {
-            flex: 1;
-            padding: 1rem;
+            padding: 20px;
+        }
+        main h2 {
+            color: #333;
+        }
+        main p {
+            color: #666;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>我的博客</h1>
-        <div class="search-container">
-            <input type="text" id="searchBox" placeholder="搜索...">
-            <button onclick="performSearch()">搜索</button>
-        </div>
+        <h1>欢迎来到我的博客</h1>
     </header>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="搜索博客...">
+        <button onclick="searchBlog()">搜索</button>
+    </div>
     <main>
-        <!-- 博客内容将展示在这里 -->
+        <h2>副标题 1: 编程基础</h2>
+        <p>此部分将详细介绍编程的基本概念...</p>
+
+        <h2>副标题 2: JavaScript 入门</h2>
+        <p>这里将引导您学习 JavaScript 的基础知识...</p>
+
+        <h2>副标题 3: HTML 与 CSS</h2>
+        <p>掌握网页设计与布局的技巧...</p>
+
+        <h2>副标题 4: 响应式设计</h2>
+        <p>了解如何创建适应不同设备的网页...</p>
     </main>
 
     <script>
-        function performSearch() {
-            var query = document.getElementById('searchBox').value;
-            // 在此处添加搜索逻辑，例如通过AJAX从服务器获取数据
-            console.log('搜索关键词:', query);
-            // 假设的搜索结果显示函数
-            displaySearchResults(query);
-        }
-
-        function displaySearchResults(query) {
-            // 在此添加显示搜索结果的逻辑
-            console.log('显示搜索结果:', query);
-            // 实际应用中，您可能需要在此处调用AJAX或Fetch API从服务器获取数据
+        function searchBlog() {
+            const query = document.getElementById('searchInput').value;
+            if (query) {
+                alert('搜索功能尚未实现，您搜索的关键词是：' + query);
+            } else {
+                alert('请输入搜索关键词');
+            }
         }
     </script>
 </body>
