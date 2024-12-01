@@ -2,71 +2,88 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>博客第二页面示例</title>
+    <title>博客</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            min-height: 100vh;
         }
+
         header {
             background-color: #333;
             color: #fff;
             padding: 1rem;
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        nav {
-            text-align: center;
+
+        .search-container {
+            position: relative;
         }
-        nav a {
-            margin: 0 1rem;
-            text-decoration: none;
+
+        .search-container input {
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .search-container button {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 4px;
+            background-color: #007BFF;
             color: #fff;
+            cursor: pointer;
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
         }
-        aside {
-            float: left;
-            width: 25%;
-            background-color: #f4f4f4;
-            padding: 1rem;
+
+        .search-container button:hover {
+            background-color: #0056b3;
         }
+
         main {
-            margin-left: 25%;
+            flex: 1;
             padding: 1rem;
-        }
-        article {
-            margin-bottom: 1rem;
-        }
-        article h2 {
-            margin-top: 0;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>我的博客</h1>
-        <nav>
-            <a href="index.html">主页</a>
-            <a href="category.html">分类</a>
-            <a href="about.html">关于我</a>
-        </nav>
+        <div class="search-container">
+            <input type="text" id="searchBox" placeholder="搜索...">
+            <button onclick="performSearch()">搜索</button>
+        </div>
     </header>
-    <aside>
-        <h2>分类</h2>
-        <ul>
-            <li><a href="#">分类一</a></li>
-            <li><a href="#">分类二</a></li>
-            <li><a href="#">分类三</a></li>
-        </ul>
-    </aside>
     <main>
-        <article>
-            <h2>文章标题一</h2>
-            <p>这是文章摘要...</p>
-        </article>
-        <article>
-            <h2>文章标题二</h2>
-            <p>这是另一篇文章摘要...</p>
-        </article>
+        <!-- 博客内容将展示在这里 -->
     </main>
+
+    <script>
+        function performSearch() {
+            var query = document.getElementById('searchBox').value;
+            // 在此处添加搜索逻辑，例如通过AJAX从服务器获取数据
+            console.log('搜索关键词:', query);
+            // 假设的搜索结果显示函数
+            displaySearchResults(query);
+        }
+
+        function displaySearchResults(query) {
+            // 在此添加显示搜索结果的逻辑
+            console.log('显示搜索结果:', query);
+            // 实际应用中，您可能需要在此处调用AJAX或Fetch API从服务器获取数据
+        }
+    </script>
 </body>
 </html>
