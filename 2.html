@@ -3,87 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的博客</title>
+    <title>博客首页</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
         }
         header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
             text-align: center;
         }
-        header h1 {
-            margin: 0;
-        }
-        .search-container {
+        .search-box {
             margin: 20px auto;
             text-align: center;
         }
-        .search-container input[type="text"] {
+        .search-box input[type="text"] {
+            width: 60%;
             padding: 10px;
-            width: 80%;
-            max-width: 400px;
+            font-size: 16px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 5px;
         }
-        .search-container button {
+        .search-box button {
             padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
             border: none;
-            background-color: #333;
-            color: #fff;
-            border-radius: 4px;
+            border-radius: 5px;
             cursor: pointer;
         }
-        .search-container button:hover {
-            background-color: #444;
+        .search-box button:hover {
+            background-color: #45a049;
         }
         main {
             padding: 20px;
         }
-        main h2 {
+        h2 {
+            color: #4CAF50;
+        }
+        p {
             color: #333;
         }
-        main p {
-            color: #666;
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f1f1f1;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>欢迎来到我的博客</h1>
+        <h1>我的博客</h1>
+        <p>探索编程的世界</p>
     </header>
-    <div class="search-container">
-        <input type="text" id="searchInput" placeholder="搜索博客...">
-        <button onclick="searchBlog()">搜索</button>
+
+    <div class="search-box">
+        <input type="text" placeholder="搜索博客内容...">
+        <button>搜索</button>
     </div>
+
     <main>
-        <h2>副标题 1: 编程基础</h2>
-        <p>此部分将详细介绍编程的基本概念...</p>
+        <h2>标题 1: 编程入门</h2>
+        <p>学习如何开始编程的第一步，适合初学者。</p>
 
-        <h2>副标题 2: JavaScript 入门</h2>
-        <p>这里将引导您学习 JavaScript 的基础知识...</p>
+        <h2>标题 2: Web 开发</h2>
+        <p>了解 HTML、CSS 和 JavaScript 的基础知识，构建网站。</p>
 
-        <h2>副标题 3: HTML 与 CSS</h2>
-        <p>掌握网页设计与布局的技巧...</p>
+        <h2>标题 3: 数据结构</h2>
+        <p>掌握常见的数据结构概念和实践应用。</p>
 
-        <h2>副标题 4: 响应式设计</h2>
-        <p>了解如何创建适应不同设备的网页...</p>
+        <h2>标题 4: 算法基础</h2>
+        <p>探索算法的核心概念，学习解决问题的技巧。</p>
     </main>
 
-    <script>
-        function searchBlog() {
-            const query = document.getElementById('searchInput').value;
-            if (query) {
-                alert('搜索功能尚未实现，您搜索的关键词是：' + query);
-            } else {
-                alert('请输入搜索关键词');
-            }
-        }
-    </script>
+    <footer>
+        <p>&copy; 2024 我的博客 | 由编程爱好者提供支持</p>
+    </footer>
 </body>
 </html>
